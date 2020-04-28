@@ -52,7 +52,7 @@ public:
 
     void clear();
 
-    int getAvarageSalary();
+    int getAverageSalary();
 };
 
 

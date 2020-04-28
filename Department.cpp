@@ -111,8 +111,11 @@ void Department::clear() {
     employments.clear();
 }
 
-int Department::getAvarageSalary() {
+int Department::getAverageSalary() {
     int res = 0;
+    if (employments.empty()){
+        return 0;
+    }
     for (auto & employment : employments) {
         res += employment.get_salary();
     }

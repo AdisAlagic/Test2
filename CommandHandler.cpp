@@ -39,6 +39,9 @@ void CommandHandler::parseCommand(const string &comm) {
 }
 
 CommandHandler::CommandHandler(vector<Department> *s, XMLHandler *xmlHandler) {
+    if (s == nullptr){
+        terminate();
+    }
     this->s = s;
     state = NONE_SELECTED;
     this->handler = xmlHandler;
@@ -251,7 +254,7 @@ void CommandHandler::average() {
             cout << "Nothing to show\n";
             break;
         case DEP_SELECTED:
-            cout << "Average salary is " << depHolder.getAvarageSalary() << endl;
+            cout << "Average salary is " << depHolder.getAverageSalary() << endl;
             break;
         case EMP_SELECTED:
             printf("Salary of %s %s %s is %d\n", empHolder.get_surname().c_str(), empHolder.get_name().c_str(),
